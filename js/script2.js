@@ -1,23 +1,20 @@
 const numero = Math.floor(Math.random() * (9 - 0 + 1) + 0);
 console.log(numero);
 
-let chute = prompt('Digite um número');
+verificaAcerto ();
 
-const errouMsg = () => {
-    alert('errrrrrrooouuu');
-    prompt('tente novamente');
-}
+function verificaAcerto() {
 
-const acertouMsg = () => {
-    alert('acertou mizeravi');
-    return;
-}
+    let chute = prompt('Digite um número.');
 
-for (let i = 2; i > 0; i--) {
-    if (chute != numero) {
-        errouMsg();
-    } else {
-        acertouMsg();
-        break;
+    for (i = 0; i < 2; i++) {
+        if (chute != numero) {
+            alert('errou');
+            verificaAcerto ();
+            break;
+        } else {
+            alert('Parabéns, você acertou.');
+            break;
+        }
     }
 }
