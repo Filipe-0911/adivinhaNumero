@@ -7,10 +7,9 @@ function verificaAcerto() {
 
     let chute = prompt('Digite um número.');
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < 2; i++) {
         if (chute != numero) {
-            alert('errou');
-            chute = prompt('tente novamente.')
+            chute = prompt('Errou. Tente novamente.')
         } else {
             alert('Parabéns, você acertou.');
             break;
