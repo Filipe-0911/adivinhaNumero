@@ -1,42 +1,24 @@
 const numero = Math.floor(Math.random() * (9 - 0 + 1) + 0);
 console.log(numero);
+const resposta = document.querySelector('.resposta');
 
-//verificaAcerto();
+document.querySelector('.botao').addEventListener('click', () => {
 
-function verificaAcerto() {
+    var numeroInserido = document.querySelector('#numero');
+    let texto = Number(numeroInserido.value);
+    console.log(texto);
+    
+    
+    for (i = 3; i > 0; i--) {
 
-    let chute = prompt('Digite um número.');
-
-    for (i = 0; i < 2; i++) {
-        if (chute != numero) {
-            chute = prompt('Errou. Tente novamente.')
-        } else {
-            alert('Parabéns, você acertou.');
+        if (texto == numero) {
+            resposta.innerHTML = 'Você acertou!';
             break;
+
+        } else {
+            resposta.innerHTML = `Você errou! Você tem mais ${i} tentativas`;
+            document.getElementById('numero').value = "";
+
         }
     }
-    if (chute == numero) {
-        alert(`Parabéns, você acertou! O número correto era ${numero}.`)
-    } else {
-        alert(`Fim de jogo, o número correto era ${numero}.`)
-    }
-}
-
-
-    document.querySelector('.botao').addEventListener('click', () => {
-        var numeroInserido = document.querySelector('#numero');
-        var texto = numeroInserido.value;
-        console.log(texto)
-
-        for (i = 0; i < 2; i++) {
-            if (texto != numero) {
-                document.querySelector('.resposta'). innerHTML = 'Você errou!';
-                alert('Tente novamente.');
-            } else {
-                document.querySelector('.resposta'). innerHTML = 'Você acertou!'
-                break;
-            }
-        }
-
-    })
-
+});
