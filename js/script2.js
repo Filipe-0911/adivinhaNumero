@@ -9,7 +9,7 @@ document.querySelector('.botao').addEventListener('click', () => {
     console.log(texto);
     
     
-    for (i = 3; i > 0; i--) {
+    for (i = 2; i > 0; i--) {
 
         if (texto == numero) {
             resposta.innerHTML = 'Você acertou!';
