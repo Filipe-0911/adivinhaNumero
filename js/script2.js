@@ -7,19 +7,15 @@ document.querySelector('.botao').addEventListener('click', () => {
     var numeroInserido = document.querySelector('#numero');
     let texto = parseInt(numeroInserido.value);
     console.log(texto);
-    
-    
-    for (i = 2; i > 0; i--) {
 
         if (texto == numero) {
             resposta.innerHTML = 'Você acertou!';
-            break;
 
         } else {
-            resposta.innerHTML = `Você errou! Você tem mais ${i} tentativas`;
+            while (texto != numero) {
+            resposta.innerHTML = `Você errou!`;
             document.getElementById('numero').value = "";
             break;
-
+            }
         }
-    }
 });
